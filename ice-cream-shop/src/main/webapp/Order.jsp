@@ -10,7 +10,6 @@
         <option>Strawberry</option>
         <option>BlackCurrent</option>
         <option>Pineapple</option>
-        <option>Apple</option>
     </select><br>
     Quantity: <input type="number" name="quantity"><br>
     Take Away: <input type="checkbox" name="takeAway"><br>
