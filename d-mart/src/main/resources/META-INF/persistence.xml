@@ -2,9 +2,9 @@
     <persistence-unit name="x-workz">
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"></property>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa"></property>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dmart"></property>
             <property name="javax.persistence.jdbc.user" value="root"></property>
-            <property name="javax.persistence.jdbc.password" value="xworkzodc"></property>
+            <property name="javax.persistence.jdbc.password" value="Sonal@7715"></property>
         </properties>
     </persistence-unit>
 </persistence>
