@@ -3,6 +3,7 @@ package com.xworkz.dmart.entity;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -11,7 +12,8 @@ import java.util.Date;
 @Setter
 @RequiredArgsConstructor
 @Entity
-@Table(name="product_entity")
+@Table(name="product_info")
+@ToString
 public class ProductEntity {
 
     @Id
