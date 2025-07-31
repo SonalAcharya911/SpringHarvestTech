@@ -9,6 +9,7 @@ import lombok.ToString;
 @ToString
 
 public class ContactDTO {
+    private int contactID;
     private String name;
     private String email;
     private long mobile;
