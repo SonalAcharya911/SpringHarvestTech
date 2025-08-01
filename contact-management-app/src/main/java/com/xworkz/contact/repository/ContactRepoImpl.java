@@ -27,8 +27,8 @@ public class ContactRepoImpl implements ContactRepo{
         int rows=0;
         if(contactDTO!=null){
             System.out.println("dto is not null");
-            String insertQuery="insert into contact_info(contact_id, contact_name, contact_email, contact_phone, contact_comments) values (?,?,?,?,?)";
-            rows=template.update(insertQuery,contactDTO.getContactID(),contactDTO.getName(),contactDTO.getEmail(),contactDTO.getMobile(),contactDTO.getComments());
+            String insertQuery="insert into contact_info(contact_name, contact_email, contact_phone, contact_comments) values (?,?,?,?)";
+            rows=template.update(insertQuery,contactDTO.getName(),contactDTO.getEmail(),contactDTO.getMobile(),contactDTO.getComments());
             System.out.println("rows affected in save= "+rows);
             System.out.println("added");
 
