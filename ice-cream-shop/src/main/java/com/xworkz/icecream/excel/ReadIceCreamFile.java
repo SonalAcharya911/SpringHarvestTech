@@ -117,8 +117,8 @@ public class ReadIceCreamFile {
                                 System.out.println("none match");
                         }
                     }
-                    OrderDTO orderDTO=new OrderDTO(name,flavour,quantity,takeAway,addOn,couponCode);
-                    orderDTOS.add(orderDTO);
+//                    OrderDTO orderDTO=new OrderDTO(name,flavour,quantity,takeAway,addOn,couponCode);
+//                    orderDTOS.add(orderDTO);
                 }
             }
 
