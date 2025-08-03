@@ -15,12 +15,10 @@ import java.time.LocalDate;
 
 @NamedQuery(name="findByApplicationName",query="select a from ApplicationEntity a where a.applicationName=:appName")
 @NamedQuery(name="findByAppSize", query="select a from ApplicationEntity a where a.applicationSize =: appSize")
-@NamedQuery(name="find", query="select a from ApplicationEntity a where a.:property =: appSize")
-
-
-
-
-
+@NamedQuery(name="findByCompany", query="select a from ApplicationEntity a where a.company =: company")
+@NamedQuery(name="findByNoOfUsers",query="select a from ApplicationEntity a where a.noOfUsers=: noOfUsers")
+@NamedQuery(name="findByRating",query="select a from ApplicationEntity a where a.rating=:rating")
+@NamedQuery(name="findByLaunchDate",query="select a from ApplicationEntity a where a..launchDate=: launchDate")
 public class ApplicationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
