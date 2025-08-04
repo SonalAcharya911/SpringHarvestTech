@@ -30,6 +30,10 @@
             <label for="comments" class="form-label fw-semibold">Comments</label>
             <textarea id="comments" name="comments" class="form-control" rows="3" placeholder="Your message..."></textarea>
         </div>
+        <div class="mb-3">
+            <label for="multipartFile" class="form-label fw-semibold">Id Proof</label>
+            <input type="file" id="multipartFile" name="multipartFile" class="form-control" placeholder="choose a file" required>
+        </div>
         <div class="text-center">
             <button type="submit" class="btn btn-info fw-semibold px-4 py-2 rounded-pill">Submit</button>
         </div>
