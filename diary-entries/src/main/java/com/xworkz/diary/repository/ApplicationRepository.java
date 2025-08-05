@@ -16,7 +16,11 @@ public interface ApplicationRepository {
 
     ApplicationEntity findByApplicationName(String name);
 
-    ApplicationEntity find(Object property, Object value);
+    List<ApplicationEntity> fetchAll();
+
+    ApplicationEntity findByCompanyName(String company);
+
+    int updateNameAndNoOfUsersByCompanyAndID(String name,Integer noOfUsers, String company, Integer id);
 
 
 }
