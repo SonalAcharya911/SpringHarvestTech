@@ -4,7 +4,13 @@ import com.xworkz.diary.entity.ApplicationEntity;
 import com.xworkz.diary.repository.ApplicationRepository;
 import com.xworkz.diary.repository.ApplicationRepositoryImpl;
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
 public class ApplicationServiceImpl implements ApplicationService{
+
+    ApplicationRepository applicationRepository;
 
     @Override
     public boolean validate(ApplicationEntity entity) {
@@ -89,5 +95,15 @@ public class ApplicationServiceImpl implements ApplicationService{
         entity=repo.findByApplicationName(name);
 
         return entity;
+    }
+
+    @Override
+    public List<ApplicationEntity> fetchAll() {
+        applicationRepository=new ApplicationRepositoryImpl();
+        List<ApplicationEntity> list=applicationRepository.fetchAll();
+        if(list!=null){
+            return list;
+        }
+        return Collections.emptyList();
     }
 }

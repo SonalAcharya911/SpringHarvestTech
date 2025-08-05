@@ -2,6 +2,8 @@ package com.xworkz.diary.service;
 
 import com.xworkz.diary.entity.ApplicationEntity;
 
+import java.util.List;
+
 public interface ApplicationService {
     public boolean validate(ApplicationEntity applicationEntity);
 
@@ -10,5 +12,9 @@ public interface ApplicationService {
     public void deleteByID(int id);
 
     public ApplicationEntity findByApplicationName(String name);
+
+    List<ApplicationEntity> fetchAll();
+
+
 
 }
