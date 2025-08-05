@@ -18,7 +18,11 @@ import java.time.LocalDate;
 @NamedQuery(name="findByCompany", query="select a from ApplicationEntity a where a.company =: company")
 @NamedQuery(name="findByNoOfUsers",query="select a from ApplicationEntity a where a.noOfUsers=: noOfUsers")
 @NamedQuery(name="findByRating",query="select a from ApplicationEntity a where a.rating=:rating")
-@NamedQuery(name="findByLaunchDate",query="select a from ApplicationEntity a where a..launchDate=: launchDate")
+@NamedQuery(name="findByLaunchDate",query="select a from ApplicationEntity a where a.launchDate=: launchDate")
+@NamedQuery(name="fetchAll", query="select a from ApplicationEntity a")
+@NamedQuery(name="updateNameAndNoOfUsersByCompanyAndID", query = "update ApplicationEntity a " +
+        "set a.applicationName=: name, a.noOfUsers=: noOfUsers" +
+        " where a.company=: company and a.applicationID=: id")
 public class ApplicationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
