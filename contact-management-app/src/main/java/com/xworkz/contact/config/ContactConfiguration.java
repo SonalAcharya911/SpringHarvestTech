@@ -7,6 +7,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
@@ -28,7 +31,6 @@ public class ContactConfiguration {
         ds.setUsername("root");
         ds.setPassword("Sonal@7715");
 
-
         return ds;
     }
 
@@ -48,13 +50,9 @@ public class ContactConfiguration {
         return contactRepo;
     }
 
-    @PostConstruct
-    public void testDBConnection() {
-        try (Connection conn = getDataSource().getConnection()) {
-            System.out.println("✅ Connected to database: " + conn.getMetaData().getDatabaseProductName());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    @Bean
+    public MultipartResolver registerResolver(){
+        return new StandardServletMultipartResolver();
     }
 
 
