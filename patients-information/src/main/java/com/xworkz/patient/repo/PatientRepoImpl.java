@@ -3,10 +3,11 @@ package com.xworkz.patient.repo;
 import com.xworkz.patient.entity.PatientEntity;
 
 import javax.persistence.*;
+import java.util.List;
 
 public class PatientRepoImpl implements PatientRepo {
 
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("x-workz");
+    private final static EntityManagerFactory emf = Persistence.createEntityManagerFactory("x-workz");
     private EntityManager em;
     private EntityTransaction transaction;
 
@@ -109,6 +110,8 @@ public class PatientRepoImpl implements PatientRepo {
             try {
                 em = emf.createEntityManager();
                 entity= (PatientEntity) em.createNamedQuery("findByName").setParameter("name",name).getSingleResult();
+
+                em.createNamedQuery("findByName").setParameter("name",name).getResultStream().forEach(System.out::println);
             } catch (NoResultException e) {
                 System.out.println("No patient found with name: " + name);
             } catch (PersistenceException e) {

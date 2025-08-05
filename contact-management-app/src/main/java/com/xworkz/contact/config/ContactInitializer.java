@@ -30,7 +30,6 @@ public class ContactInitializer extends AbstractAnnotationConfigDispatcherServle
     @Override
     protected void customizeRegistration(ServletRegistration.Dynamic registration) {
 
-
         // upload temp file will put here
         File uploadDirectory = new File(System.getProperty("java.io.tmpdir"));
 
