@@ -22,5 +22,12 @@ public interface ApplicationRepository {
 
     int updateNameAndNoOfUsersByCompanyAndID(String name,Integer noOfUsers, String company, Integer id);
 
+    List<Object> getAllApplicationName();
+
+    List<List<Object>> getAllApplicationNameAndCompany();
+
+    List<Object> getAllAppLaunchDate();
+
+    List<Object[]> getAllAppNameAndNoOfUsers();
 
 }
