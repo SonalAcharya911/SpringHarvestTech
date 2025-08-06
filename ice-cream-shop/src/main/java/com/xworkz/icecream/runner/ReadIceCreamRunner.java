@@ -9,7 +9,5 @@ public class ReadIceCreamRunner {
     public static void main(String[] args) {
         Collection<OrderDTO> orderDTOS=ReadIceCreamFile.readFileData("ice_cream_orders.xlsx");
         orderDTOS.stream().forEach(System.out::println);
-
-
     }
 }
