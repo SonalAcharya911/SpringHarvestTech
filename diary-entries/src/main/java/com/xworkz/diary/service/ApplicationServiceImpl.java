@@ -106,4 +106,27 @@ public class ApplicationServiceImpl implements ApplicationService{
         }
         return Collections.emptyList();
     }
+
+    @Override
+    public List<Object> getAllApplicationName() {
+        applicationRepository=new ApplicationRepositoryImpl();
+        return applicationRepository.getAllApplicationName();
+    }
+
+    @Override
+    public List<List<Object>> getAllApplicationNameAndCompany() {
+        applicationRepository=new ApplicationRepositoryImpl();
+        return applicationRepository.getAllApplicationNameAndCompany();
+    }
+
+    @Override
+    public List<Object> getAllAppLaunchDate() {
+        applicationRepository=new ApplicationRepositoryImpl();
+        return applicationRepository.getAllAppLaunchDate();
+    }
+
+    @Override
+    public List<Object[]> getAllApplicationNameAndNoOfUsers() {
+        applicationRepository=new ApplicationRepositoryImpl();
+        return applicationRepository.getAllAppNameAndNoOfUsers();    }
 }
