@@ -25,7 +25,7 @@ public class OrderController {
         System.out.println("created Controller...");
     }
 
-    @RequestMapping("/order")
+    @RequestMapping("order")
     public String onOrder(@Validated OrderDTO orderDTO, Model model, BindingResult bindingResult) throws IOException {
 
         System.out.println("orderDTO: "+orderDTO);
@@ -51,14 +51,14 @@ public class OrderController {
         }
     }
 
-//    @PostMapping("reg")
-//    public String registerForm(OrderDTO orderDTO, Model model) throws IOException {
-//        byte[] bytes = orderDTO.getMultipartFile().getBytes();
-//
-//        Path path = Paths.get("C:\\commons\\"+orderDTO.getName()+System.currentTimeMillis());
-//        Files.write(path,bytes);
-//
-//        return "OrderSucces";
-//
-//    }
+    @PostMapping("reg")
+    public String registerForm(OrderDTO orderDTO, Model model) throws IOException {
+        byte[] bytes = orderDTO.getMultipartFile().getBytes();
+
+        Path path = Paths.get("C:\\commons\\"+orderDTO.getName()+System.currentTimeMillis());
+        Files.write(path,bytes);
+
+        return "OrderSucces";
+
+    }
 }

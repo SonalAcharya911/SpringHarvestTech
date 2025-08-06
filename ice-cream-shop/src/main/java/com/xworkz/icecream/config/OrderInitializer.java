@@ -21,7 +21,7 @@ public class OrderInitializer extends AbstractAnnotationConfigDispatcherServletI
 
     @Override
     protected String[] getServletMappings() {
-        return new String[]{"/order"};
+        return new String[]{"/"};
     }
     @Override
     protected void customizeRegistration(ServletRegistration.Dynamic registration) {

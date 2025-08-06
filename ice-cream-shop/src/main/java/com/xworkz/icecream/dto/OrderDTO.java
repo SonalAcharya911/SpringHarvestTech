@@ -1,9 +1,6 @@
 package com.xworkz.icecream.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.Max;
@@ -13,6 +10,7 @@ import javax.validation.constraints.Size;
 @Getter
 @Setter
 @ToString
+@AllArgsConstructor
 
 public class OrderDTO {
 
