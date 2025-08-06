@@ -14,4 +14,10 @@ public interface PatientRepo {
     PatientEntity findByName(String name);
 
     PatientEntity findByWardNumber(Integer wardNo);
+
+    int updateDoctorByBloodGroupAndSickness(String doctor,String bloodGroup,String sickness);
+
+    int updateAgeByID(Integer age,Integer id);
+
+    int updateContactByNameAndID(Long contact,String name,Integer id);
 }

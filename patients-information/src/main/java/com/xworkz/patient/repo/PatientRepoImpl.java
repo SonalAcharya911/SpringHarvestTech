@@ -142,4 +142,82 @@ public class PatientRepoImpl implements PatientRepo {
         }
         return entity;
     }
+
+    @Override
+    public int updateDoctorByBloodGroupAndSickness(String doctor, String bloodGroup, String sickness) {
+        EntityManager em=null;
+        EntityTransaction et=null;
+        int rows=0;
+        try{
+            em=emf.createEntityManager();
+            et=em.getTransaction();
+
+            et.begin();
+            Query query=em.createNamedQuery("updateDoctorByBloodGroupAndSickness").setParameter("doctor",doctor).setParameter("bloodGroup",bloodGroup).setParameter("sickness",sickness);
+            rows=query.executeUpdate();
+            et.commit();
+        }
+        catch(PersistenceException e){
+            System.out.println(e.getMessage());
+            et.rollback();
+        }
+        finally{
+            if(em!=null){
+                em.close();
+            }
+        }
+        return rows;
+    }
+
+    @Override
+    public int updateAgeByID(Integer age, Integer id) {
+        EntityManager em=null;
+        EntityTransaction et=null;
+        int rows=0;
+        try{
+            em=emf.createEntityManager();
+            et=em.getTransaction();
+
+            et.begin();
+            Query query=em.createNamedQuery("updateAgeByID").setParameter("age",age).setParameter("id",id);
+            rows=query.executeUpdate();
+            et.commit();
+        }
+        catch(PersistenceException e){
+            System.out.println(e.getMessage());
+            et.rollback();
+        }
+        finally{
+            if(em!=null){
+                em.close();
+            }
+        }
+        return rows;
+    }
+
+    @Override
+    public int updateContactByNameAndID(Long contact, String name, Integer id) {
+        EntityManager em=null;
+        EntityTransaction et=null;
+        int rows=0;
+        try{
+            em=emf.createEntityManager();
+            et=em.getTransaction();
+
+            et.begin();
+            Query query=em.createNamedQuery("updateContactByNameAndID").setParameter("contact",contact).setParameter("name",name).setParameter("id",id);
+            rows=query.executeUpdate();
+            et.commit();
+        }
+        catch(PersistenceException e){
+            System.out.println(e.getMessage());
+            et.rollback();
+        }
+        finally{
+            if(em!=null){
+                em.close();
+            }
+        }
+        return rows;
+    }
 }
