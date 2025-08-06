@@ -34,5 +34,9 @@ public class PatientRunner {
         PatientEntity wardPatient = patientService.findByWardNumber(101);
         System.out.println("Patient in ward 101: "+ wardPatient);
 
+        patientService.updateAgeByID(45,1);
+        patientService.updateContactByNameAndID(9739257715l,"Steve Rogers",4);
+        patientService.updateDoctorByBloodGroupAndSickness("Dr. Bruce Banner","O-","Reality Distortion Episodes");
+
     }
 }

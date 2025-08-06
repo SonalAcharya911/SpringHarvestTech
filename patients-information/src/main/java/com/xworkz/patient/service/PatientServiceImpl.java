@@ -127,4 +127,19 @@ public class PatientServiceImpl implements PatientService {
             return null;
         }
     }
+
+    @Override
+    public int updateDoctorByBloodGroupAndSickness(String doctor, String bloodGroup, String sickness) {
+        return patientRepo.updateDoctorByBloodGroupAndSickness(doctor,bloodGroup,sickness);
+    }
+
+    @Override
+    public int updateAgeByID(Integer age, Integer id) {
+        return patientRepo.updateAgeByID(age,id);
+    }
+
+    @Override
+    public int updateContactByNameAndID(Long contact, String name, Integer id) {
+        return patientRepo.updateContactByNameAndID(contact, name, id);
+    }
 }
