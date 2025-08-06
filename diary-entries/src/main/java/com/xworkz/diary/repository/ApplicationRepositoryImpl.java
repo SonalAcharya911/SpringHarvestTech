@@ -255,7 +255,78 @@ public class ApplicationRepositoryImpl implements ApplicationRepository{
         return rows;
     }
 
-//    public static void closeEntityManagerFactory(){
+    @Override
+    public List<Object> getAllApplicationName() {
+        EntityManager em=null;
+        List<Object> appNames=null;
+        try{
+            em=emf.createEntityManager();
+            Query query= em.createNamedQuery("getAllApplicationName");
+            appNames=query.getResultList();
+        }catch(PersistenceException e){
+            System.out.println(e.getMessage());
+        }finally {
+            if(em!=null){
+                em.close();
+            }
+        }
+        return appNames;
+    }
+
+    @Override
+    public List<List<Object>> getAllApplicationNameAndCompany() {
+        EntityManager em=null;
+        List<List<Object>> appNameAndCompany=null;
+        try{
+            em=emf.createEntityManager();
+            Query query= em.createNamedQuery("getAllApplicationNameAndCompany");
+            appNameAndCompany=query.getResultList();
+        }catch(PersistenceException e){
+            System.out.println(e.getMessage());
+        }finally {
+            if(em!=null){
+                em.close();
+            }
+        }
+        return appNameAndCompany;
+    }
+
+    @Override
+    public List<Object> getAllAppLaunchDate() {
+        List<Object> appNameAndDate=null;
+        EntityManager em=null;
+        try{
+            em=emf.createEntityManager();
+            appNameAndDate=em.createNamedQuery("getAllApplicationDate").getResultList();
+        }catch(PersistenceException e){
+            System.out.println(e.getMessage());
+        }finally {
+            if(em!=null){
+                em.close();
+            }
+        }
+        return appNameAndDate;
+    }
+
+    @Override
+    public List<Object[]> getAllAppNameAndNoOfUsers() {
+        EntityManager em=null;
+        List<Object[]> list=null;
+        try{
+            em=emf.createEntityManager();
+            list=em.createNamedQuery("getAllApplicationNameAndNoOfUsers").getResultList();
+        }
+        catch(PersistenceException e){
+            System.out.println(e.getMessage());
+        }
+        finally {
+            if(em!=null){
+                em.close();
+            }
+        }
+        return list;
+    }
+    //    public static void closeEntityManagerFactory(){
 //        System.out.println("closing entity manager factory...");
 //        if(emf!=null && emf.isOpen()){
 //

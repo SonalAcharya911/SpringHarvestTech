@@ -15,6 +15,12 @@ public interface ApplicationService {
 
     List<ApplicationEntity> fetchAll();
 
+    List<Object> getAllApplicationName();
 
+    List<List<Object>> getAllApplicationNameAndCompany();
+
+    List<Object> getAllAppLaunchDate();
+
+    List<Object[]> getAllApplicationNameAndNoOfUsers();
 
 }
