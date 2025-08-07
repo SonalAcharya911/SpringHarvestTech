@@ -24,10 +24,10 @@ import java.time.LocalDate;
         "set a.applicationName=: name, a.noOfUsers=: noOfUsers" +
         " where a.company=: company and a.applicationID=: id")
 
-@NamedQuery(name = "getAllApplicationName",query = "select a.applicationName from ApplicationEntity a")
-@NamedQuery(name = "getAllApplicationNameAndCompany",query = "select a.applicationName,a.company from ApplicationEntity a")
-@NamedQuery(name = "getAllApplicationNameAndNoOfUsers",query = "select a.applicationName,a.noOfUsers from ApplicationEntity a")
-@NamedQuery(name = "getAllApplicationDate",query = "select a.launchDate from ApplicationEntity a")
+@NamedQuery(name = "getAllApplicationName", query = "select a.applicationName from ApplicationEntity a")
+@NamedQuery(name = "getAllApplicationNameAndCompany", query = "select a.applicationName,a.company from ApplicationEntity a")
+@NamedQuery(name = "getAllApplicationNameAndNoOfUsers", query = "select a.applicationName,a.noOfUsers from ApplicationEntity a")
+@NamedQuery(name = "getAllApplicationDate", query = "select a.launchDate from ApplicationEntity a")
 public class ApplicationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

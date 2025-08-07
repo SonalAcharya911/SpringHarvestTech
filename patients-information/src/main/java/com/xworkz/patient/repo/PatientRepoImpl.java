@@ -3,6 +3,7 @@ package com.xworkz.patient.repo;
 import com.xworkz.patient.entity.PatientEntity;
 
 import javax.persistence.*;
+import java.util.Collections;
 import java.util.List;
 
 public class PatientRepoImpl implements PatientRepo {
@@ -219,5 +220,56 @@ public class PatientRepoImpl implements PatientRepo {
             }
         }
         return rows;
+    }
+
+    @Override
+    public List<Object> getAllPatientNames() {
+        List<Object> patientNames=null;
+        EntityManager em=null;
+        try{
+            em=emf.createEntityManager();
+            patientNames=em.createNamedQuery("getAllPatientNames").getResultList();
+        }catch(PersistenceException e){
+            System.out.println(e.getMessage());
+        }finally {
+            if(em!=null){
+                em.close();
+            }
+        }
+        return patientNames;
+    }
+
+    @Override
+    public List<Integer> getAllWardNos() {
+        List<Integer> wardNos=null;
+        EntityManager em=null;
+        try{
+            em=emf.createEntityManager();
+            wardNos=em.createNamedQuery("getAllWardNos").getResultList();
+        }catch(PersistenceException e){
+            System.out.println(e.getMessage());
+        }finally {
+            if(em!=null){
+                em.close();
+            }
+        }
+        return wardNos;
+    }
+
+    @Override
+    public List<String[]> getAllPatientsDoctorSickness() {
+        List<String[]> list=null;
+        EntityManager em=null;
+        try{
+            em=emf.createEntityManager();
+            list=em.createNamedQuery("getAllWardNos").getResultList();
+        }catch(PersistenceException e){
+            System.out.println(e.getMessage());
+        }finally {
+            if(em!=null){
+                em.close();
+            }
+        }
+        return list;
     }
 }

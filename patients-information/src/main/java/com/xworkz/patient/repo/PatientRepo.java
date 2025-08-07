@@ -2,6 +2,8 @@ package com.xworkz.patient.repo;
 
 import com.xworkz.patient.entity.PatientEntity;
 
+import java.util.List;
+
 public interface PatientRepo {
     boolean save(PatientEntity entity);
 
@@ -20,4 +22,10 @@ public interface PatientRepo {
     int updateAgeByID(Integer age,Integer id);
 
     int updateContactByNameAndID(Long contact,String name,Integer id);
+
+    List<Object> getAllPatientNames();
+
+    List<Integer> getAllWardNos();
+
+    List<String[]> getAllPatientsDoctorSickness();
 }

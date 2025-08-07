@@ -3,6 +3,9 @@ package com.xworkz.patient.service;
 import com.xworkz.patient.entity.PatientEntity;
 import com.xworkz.patient.repo.PatientRepo;
 
+import java.util.Collections;
+import java.util.List;
+
 public class PatientServiceImpl implements PatientService {
 
     private PatientRepo patientRepo;
@@ -141,5 +144,20 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public int updateContactByNameAndID(Long contact, String name, Integer id) {
         return patientRepo.updateContactByNameAndID(contact, name, id);
+    }
+
+    @Override
+    public List<Object> getAllPatientNames() {
+        return patientRepo.getAllPatientNames();
+    }
+
+    @Override
+    public List<Integer> getAllWardNos() {
+        return patientRepo.getAllWardNos();
+    }
+
+    @Override
+    public List<String[]> getAllPatientsDoctorSickness() {
+        return patientRepo.getAllPatientsDoctorSickness();
     }
 }

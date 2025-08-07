@@ -22,6 +22,10 @@ import javax.persistence.*;
 @NamedQuery(name = "updateDoctorByBloodGroupAndSickness",query = "update PatientEntity p set p.preferredDoctor=: doctor where p.bloodGroup=: bloodGroup and p.sickness=: sickness")
 @NamedQuery(name = "updateAgeByID", query = "update PatientEntity p set p.age=: age where p.patientID=: id")
 @NamedQuery(name = "updateContactByNameAndID",query = "update PatientEntity p set p.contact=: contact where p.name=:name and p.patientID=: id")
+
+@NamedQuery(name = "getAllPatientNames",query = "select p.name from PatientEntity p")
+@NamedQuery(name = "getAllPatientsDoctorSickness",query = "select p.name,p.sickness,p.preferredDoctor from PatientEntity p")
+@NamedQuery(name = "getAllWardNos",query = "select p.wardNumber from PatientEntity p")
 public class PatientEntity {
 
     @Id
