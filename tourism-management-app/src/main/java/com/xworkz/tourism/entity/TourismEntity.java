@@ -13,6 +13,8 @@ import java.time.LocalDate;
 @Entity
 
 @Table(name = "tourism_details")
+
+@NamedQuery(name = "fetchAll",query = "select t from TourismEntity t")
 public class TourismEntity {
 
     @Id
