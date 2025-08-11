@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 public class TourismController {
 
@@ -19,13 +21,13 @@ public class TourismController {
         System.out.println("created TourismController");
     }
 
-    @GetMapping("redirectToTourism")
+    @GetMapping("/redirectToTourism")
     public String redirectToTourism(){
         System.out.println("redirecting to tourism.jsp");
-        return "/tourism.jsp";
+        return "tourism";
     }
 
-    @PostMapping("saveData")
+    @PostMapping("/saveData")
     public String saveData(TourismDTO dto, Model model){
 
         System.out.println(dto);
@@ -43,6 +45,15 @@ public class TourismController {
 
         model.addAttribute("dto",dto);
 
-        return "/tourism.jsp";
+        return "tourism";
+    }
+
+    @GetMapping("/fetchAll")
+    public String fetchAll(Model model){
+        List<TourismDTO> tourismDTOList=service.fetchAll();
+        System.out.println("Controller: "+tourismDTOList);
+        model.addAttribute("tourismDTOList",tourismDTOList);
+        tourismDTOList.forEach(e->model.addAttribute("dto",e));
+        return "AllEntity";
     }
 }
