@@ -1,0 +1,59 @@
+package com.xworkz.exhibition.service;
+
+import com.xworkz.exhibition.dto.ArtDTO;
+import com.xworkz.exhibition.entity.ArtEntity;
+import com.xworkz.exhibition.repo.ArtRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+public class ArtServiceImpl implements ArtService{
+    @Autowired
+    private ArtRepository repo;
+
+    public boolean save(ArtDTO dto){
+        if(dto!=null){
+
+            System.out.println("dto not null");
+            System.out.println("Service: "+dto);
+            ArtEntity entity=new ArtEntity();
+
+            entity.setArtistName(dto.getArtistName());
+            entity.setArtistContact(dto.getArtistContact());
+            entity.setArtistEmail(dto.getArtistEmail());
+            entity.setArtworkTitle(dto.getArtworkTitle());
+            entity.setPrice(dto.getPrice());
+            entity.setLengthInCm(dto.getLengthInCm());
+            entity.setWidthInCm(dto.getWidthInCm());
+
+            return repo.save(entity);
+
+
+        }
+        return false;
+    }
+
+    @Override
+    public List<ArtDTO> getAllArtworks() {
+        List<ArtEntity> entityList=repo.getAllArtworks();
+
+        List<ArtDTO> dtoList=entityList.stream().map(entity -> {
+            ArtDTO dto=new ArtDTO();
+            dto.setArtID(entity.getArtID());
+            dto.setArtistName(entity.getArtistName());
+            dto.setArtworkTitle(entity.getArtworkTitle());
+            dto.setLengthInCm(entity.getLengthInCm());
+            dto.setWidthInCm(entity.getWidthInCm());
+            dto.setPrice(entity.getPrice());
+            dto.setArtistEmail(entity.getArtistEmail());
+            dto.setArtistContact(entity.getArtistContact());
+            return dto;
+        }).collect(Collectors.toList());
+
+        return dtoList;
+    }
+}
