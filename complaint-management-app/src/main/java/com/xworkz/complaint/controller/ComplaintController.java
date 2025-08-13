@@ -45,12 +45,23 @@ public class ComplaintController {
 
         List<ComplaintDTO> dtoList=service.getAllComplaints();
         model.addAttribute("dtoList",dtoList);
+
+        System.out.println("all list: "+dtoList);
         return "ListOfComplaints";
     }
 
     @GetMapping("backToIndex")
     public String backToIndex(){
         return "index";
+    }
+
+    @GetMapping("findByID")
+    public String findByID(Integer id,Model model){
+        System.out.println("running findByID in Controller");
+        System.out.println("id to be found: "+id);
+        ComplaintDTO dto=service.findByID(id);
+        model.addAttribute("dto",dto);
+        return "ListOfComplaints";
     }
 
 }

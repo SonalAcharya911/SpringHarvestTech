@@ -54,8 +54,9 @@ public class ComplaintServiceImpl implements ComplaintService{
     @Override
     public ComplaintDTO findByID(Integer id) {
         System.out.println("running findByID in ComplaintServiceImpl...");
-        ComplaintDTO dto=null;
+        ComplaintDTO dto=new ComplaintDTO();
         if(id!=null){
+            System.out.println("id not null");
             ComplaintEntity entity=repo.findByID(id);
             dto.setComplaintID(entity.getComplaintID());
             dto.setComplainantName(entity.getComplainantName());
@@ -67,6 +68,7 @@ public class ComplaintServiceImpl implements ComplaintService{
 
             return dto;
         }
+        System.out.println("id is null");
         return null;
     }
 }

@@ -63,8 +63,19 @@ public class ComplaintRepoImpl implements ComplaintRepo{
 
     @Override
     public ComplaintEntity findByID(Integer id) {
-        EntityManager em=emf.createEntityManager();
-        ComplaintEntity entity= em.find(ComplaintEntity.class,id);
+        EntityManager em=null;
+        ComplaintEntity entity=null;
+        try{
+            em=emf.createEntityManager();
+            entity= em.find(ComplaintEntity.class,id);
+        } catch (PersistenceException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            if(em!=null){
+                em.close();
+            }
+        }
+
         return entity;
     }
 
