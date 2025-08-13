@@ -12,6 +12,8 @@ import java.sql.Date;
 @Setter
 @ToString
 @Table(name = "item_details")
+
+@NamedQuery(name = "getAllItems",query = "select i from ItemEntity i")
 public class ItemEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,7 +36,7 @@ public class ItemEntity {
     private String location;
 
     @Column(name = "lost_found_date")
-    private Date lostOrFoundDate;
+    private String lostOrFoundDate;
 
     @Column(name = "holder_email")
     private String email;

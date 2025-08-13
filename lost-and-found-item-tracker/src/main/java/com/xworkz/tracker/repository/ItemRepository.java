@@ -1,5 +1,14 @@
 package com.xworkz.tracker.repository;
 
-public interface ItemRepository {
+import com.xworkz.tracker.dto.ItemDTO;
+import com.xworkz.tracker.entity.ItemEntity;
 
+import java.util.List;
+
+public interface ItemRepository {
+    boolean save(ItemEntity entity);
+
+    List<ItemEntity> getAllItems();
+
+    ItemEntity findByID(Integer id);
 }
