@@ -46,4 +46,14 @@ public class ExhibitionController {
     public String backToIndex(){
         return "index";
     }
+
+    @GetMapping("findByID")
+    public String findByID(Integer id,Model model){
+        System.out.println("running findByID in controller");
+        ArtDTO dto=service.findByID(id);
+        System.out.println("dto: "+dto);
+        model.addAttribute("dto",dto);
+        return "ArtworkList";
+
+    }
 }
