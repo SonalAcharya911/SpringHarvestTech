@@ -61,6 +61,24 @@ public class ArtRepositoryImpl implements ArtRepository{
         return entityList;
     }
 
+    @Override
+    public ArtEntity findByID(Integer id) {
+        EntityManager em=null;
+        ArtEntity entity=null;
+        try{
+            em=emf.createEntityManager();
+            entity= em.find(ArtEntity.class,id);
+        } catch (PersistenceException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            if(em!=null){
+                em.close();
+            }
+        }
+
+        return entity;
+    }
+
     public static  void closeFactory(){
         if(emf!=null && emf.isOpen()){
             emf.close();
