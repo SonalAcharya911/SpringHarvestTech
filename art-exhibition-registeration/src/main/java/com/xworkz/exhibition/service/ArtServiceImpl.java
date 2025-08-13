@@ -56,4 +56,22 @@ public class ArtServiceImpl implements ArtService{
 
         return dtoList;
     }
+
+    @Override
+    public ArtDTO findByID(Integer id) {
+        System.out.println("running findByID in Service");
+        ArtEntity entity=repo.findByID(id);
+
+        ArtDTO dto=new ArtDTO();
+        dto.setArtID(entity.getArtID());
+        dto.setArtistName(entity.getArtistName());
+        dto.setArtworkTitle(entity.getArtworkTitle());
+        dto.setLengthInCm(entity.getLengthInCm());
+        dto.setWidthInCm(entity.getWidthInCm());
+        dto.setPrice(entity.getPrice());
+        dto.setArtistEmail(entity.getArtistEmail());
+        dto.setArtistContact(entity.getArtistContact());
+
+        return dto;
+    }
 }

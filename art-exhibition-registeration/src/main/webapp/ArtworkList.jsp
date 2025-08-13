@@ -36,6 +36,7 @@
         <th>Price</th>
         <th>Artist Email</th>
         <th>Artist Contact</th>
+        <th>View</th>
 
     </tr>
     <c:forEach var="item" items="${dtoList}">
@@ -48,8 +49,20 @@
             <td>${item.price}</td>
             <td>${item.artistEmail}</td>
             <td>${item.artistContact}</td>
+            <td><a href="findByID?id=${item.artID}">view</a></td>
         </tr>
     </c:forEach>
+    <tr>
+        <td>${dto.artID}</td>
+        <td>${dto.artistName}</td>
+        <td>${dto.artworkTitle}</td>
+        <td>${dto.lengthInCm}</td>
+        <td>${dto.widthInCm}</td>
+        <td>${dto.price}</td>
+        <td>${dto.artistEmail}</td>
+        <td>${dto.artistContact}</td>
+        <td><a href="getAllArtworks">view all</a></td>
+    </tr>
 
     <a href="backToIndex">Go Back</a>
 
