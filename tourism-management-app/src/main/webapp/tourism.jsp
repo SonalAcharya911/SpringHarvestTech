@@ -20,6 +20,8 @@
         End Date: <input type="date" name="endDate"><br><br>
         <input type="submit" value="Save Data">
     </form>
+
+<!--    <a href="backToIndex">Go Back</a>-->
 </center>
 
 </body>
