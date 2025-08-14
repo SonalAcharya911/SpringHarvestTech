@@ -9,4 +9,9 @@ public interface TourismRepo {
 
     List<TourismEntity> fetchAll();
 
+    TourismEntity findByID(Integer id);
+
+    boolean updateTourism(TourismEntity entity);
+
+    boolean deleteById(Integer id);
 }

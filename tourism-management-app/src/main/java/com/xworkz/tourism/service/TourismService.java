@@ -10,4 +10,11 @@ public interface TourismService {
     boolean saveTourism(TourismDTO dto);
 
     List<TourismDTO> fetchAll();
+
+    TourismDTO findByID(Integer id);
+
+    String updateTourism(TourismDTO dto);
+
+    String deleteById(Integer id);
+
 }
