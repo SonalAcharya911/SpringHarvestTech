@@ -15,6 +15,10 @@ import java.time.LocalDate;
 @Table(name = "tourism_details")
 
 @NamedQuery(name = "fetchAll",query = "select t from TourismEntity t")
+@NamedQuery(name = "updateTourism", query = "update TourismEntity t set t.destination=: destination, " +
+        "t.startPoint=: startPoint, t.packagePrice=: packagePrice, t.vehicle=: vehicle, t.vehicleNumber=: vehicleNumber," +
+        "t.noOfPeople=: noOfPeople, t.startDate=: startDate, t.endDate=:endDate where t.tourID=: tourID")
+@NamedQuery(name = "deleteById", query = "delete from TourismEntity t where t.tourID=: tourID")
 public class TourismEntity {
 
     @Id

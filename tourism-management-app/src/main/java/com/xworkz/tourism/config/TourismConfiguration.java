@@ -18,4 +18,9 @@ public class TourismConfiguration {
         return new InternalResourceViewResolver("/",".jsp");
     }
 
+    @Bean
+    public String message(){
+        return "";
+    }
+
 }
