@@ -10,4 +10,8 @@ public interface PassportService {
     List<UserDTO> getAll();
 
     boolean checkEmailExist(String email);
+
+    boolean checkloginIdExist(String loginID);
+
+    boolean checkContactExist(Long contact);
 }

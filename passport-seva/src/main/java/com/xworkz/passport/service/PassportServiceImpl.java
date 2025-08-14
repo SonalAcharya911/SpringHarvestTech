@@ -58,4 +58,28 @@ public class PassportServiceImpl implements PassportService{
         }
         return false;
     }
+
+    @Override
+    public boolean checkloginIdExist(String loginID) {
+        System.out.println("running checkloginIdExist in Service");
+        boolean exists= repo.checkloginIdExist(loginID);
+
+        if(exists){
+            System.out.println("loginID exists");
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean checkContactExist(Long contact) {
+        System.out.println("running checkContactExist in Service");
+        boolean exists= repo.checkContactExist(contact);
+
+        if(exists){
+            System.out.println("contact exists");
+            return true;
+        }
+        return false;
+    }
 }
