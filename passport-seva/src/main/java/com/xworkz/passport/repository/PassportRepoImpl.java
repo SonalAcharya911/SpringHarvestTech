@@ -90,6 +90,50 @@ public class PassportRepoImpl implements PassportRepo {
         return false;
     }
 
+    @Override
+    public boolean checkloginIdExist(String loginID) {
+        EntityManager em=null;
+        try{
+            em=emf.createEntityManager();
+            Query query=em.createNamedQuery("checkLoginIdExist").setParameter("loginID",loginID);
+            UserEntity entity= (UserEntity) query.getSingleResult();
+            if(entity!=null){
+                return true;
+            }
+        }catch(PersistenceException e){
+            System.out.println(e.getMessage());
+        }
+        finally {
+            if(em!=null){
+                em.close();
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean checkContactExist(Long contact) {
+        EntityManager em=null;
+        try{
+            em=emf.createEntityManager();
+            Query query=em.createNamedQuery("checkContactExist").setParameter("contact",contact);
+            UserEntity entity= (UserEntity) query.getSingleResult();
+            if(entity!=null){
+                System.out.println("contact exists");
+                return true;
+            }
+        }catch(PersistenceException e){
+            System.out.println(e.getMessage());
+        }
+        finally {
+            if(em!=null){
+                em.close();
+            }
+        }
+        return false;
+    }
+
+
     public static void closeFactory(){
         if(emf.isOpen() && emf!=null){
             emf.close();

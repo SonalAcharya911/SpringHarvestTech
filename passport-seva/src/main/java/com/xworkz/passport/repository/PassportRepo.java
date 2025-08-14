@@ -10,4 +10,8 @@ public interface PassportRepo {
     List<UserEntity> getAll();
 
     boolean checkEmailExist(String email);
+
+    boolean checkloginIdExist(String loginID);
+
+    boolean checkContactExist(Long contact);
 }

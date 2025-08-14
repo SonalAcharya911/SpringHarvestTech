@@ -25,7 +25,7 @@
 <body>
 
 <h2>Tourism Table</h2>
-
+<h4>${message}</h4>
 <table>
     <tr>
         <th>TourID</th>
@@ -51,7 +51,7 @@
             <td>${item.noOfPeople}</td>
             <td>${item.startDate}</td>
             <td>${item.endDate}</td>
-            <td><a href="getByID?id=${item.tourID}">View</a></td>
+            <td><a href="getByID?id=${item.tourID}">View</a> / <a href="edit?id=${item.tourID}">Edit</a> / <a href="delete/${item.tourID}">Delete</a></td>
         </tr>
     </c:forEach>
 
