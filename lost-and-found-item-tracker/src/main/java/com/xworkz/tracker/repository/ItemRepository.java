@@ -11,4 +11,6 @@ public interface ItemRepository {
     List<ItemEntity> getAllItems();
 
     ItemEntity findByID(Integer id);
+
+    boolean updateItem(ItemEntity entity);
 }
