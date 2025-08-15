@@ -79,6 +79,11 @@ public class ComplaintRepoImpl implements ComplaintRepo{
         return entity;
     }
 
+    @Override
+    public boolean updateComplaintDetails(ComplaintEntity entity) {
+        return false;
+    }
+
     public static  void closeFactory(){
         if(emf!=null && emf.isOpen()){
             emf.close();
