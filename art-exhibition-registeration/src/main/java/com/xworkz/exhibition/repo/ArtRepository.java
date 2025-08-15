@@ -11,4 +11,6 @@ public interface ArtRepository {
     List<ArtEntity> getAllArtworks();
 
     ArtEntity findByID(Integer id);
+
+    boolean updateArtworkDetails(ArtEntity entity);
 }
