@@ -79,6 +79,11 @@ public class ArtRepositoryImpl implements ArtRepository{
         return entity;
     }
 
+    @Override
+    public boolean updateArtworkDetails(ArtEntity entity) {
+        return false;
+    }
+
     public static  void closeFactory(){
         if(emf!=null && emf.isOpen()){
             emf.close();
