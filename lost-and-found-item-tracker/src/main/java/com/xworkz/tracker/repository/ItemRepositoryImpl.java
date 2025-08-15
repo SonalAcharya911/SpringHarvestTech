@@ -88,6 +88,11 @@ public class ItemRepositoryImpl implements ItemRepository{
 
     }
 
+    @Override
+    public boolean updateItem(ItemEntity entity) {
+        return false;
+    }
+
     public static  void closeFactory(){
         if(emf!=null && emf.isOpen()){
             emf.close();
