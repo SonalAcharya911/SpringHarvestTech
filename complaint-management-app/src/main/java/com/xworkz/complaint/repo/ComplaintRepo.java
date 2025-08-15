@@ -1,3 +1,5 @@
+
+
 package com.xworkz.complaint.repo;
 
 import com.xworkz.complaint.entity.ComplaintEntity;
@@ -10,4 +12,6 @@ public interface ComplaintRepo {
     List<ComplaintEntity> getAllComplaints();
 
     ComplaintEntity findByID(Integer id);
+
+    boolean updateComplaintDetails(ComplaintEntity entity);
 }
