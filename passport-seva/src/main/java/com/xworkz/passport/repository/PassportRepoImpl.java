@@ -133,6 +133,11 @@ public class PassportRepoImpl implements PassportRepo {
         return false;
     }
 
+    @Override
+    public boolean updatePassport(UserEntity entity) {
+        return false;
+    }
+
 
     public static void closeFactory(){
         if(emf.isOpen() && emf!=null){
