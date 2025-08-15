@@ -14,4 +14,6 @@ public interface PassportRepo {
     boolean checkloginIdExist(String loginID);
 
     boolean checkContactExist(Long contact);
+
+    boolean updatePassport(UserEntity entity);
 }
