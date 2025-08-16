@@ -81,11 +81,13 @@ public class ArtRepositoryImpl implements ArtRepository{
 
     @Override
     public boolean updateArtworkDetails(ArtEntity entity) {
+        System.out.println("running updateArtworkDetails in Repository");
         return false;
     }
 
     @Override
     public boolean deleteArtworktByID(Integer id) {
+        System.out.println("running deleteArtworktByID in Repository");
         return false;
     }
 
