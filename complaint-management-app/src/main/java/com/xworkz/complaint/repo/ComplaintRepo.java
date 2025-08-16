@@ -14,4 +14,6 @@ public interface ComplaintRepo {
     ComplaintEntity findByID(Integer id);
 
     boolean updateComplaintDetails(ComplaintEntity entity);
+
+    boolean deleteComplaintByID(Integer id);
 }

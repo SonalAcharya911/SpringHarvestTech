@@ -84,6 +84,11 @@ public class ArtRepositoryImpl implements ArtRepository{
         return false;
     }
 
+    @Override
+    public boolean deleteArtworktByID(Integer id) {
+        return false;
+    }
+
     public static  void closeFactory(){
         if(emf!=null && emf.isOpen()){
             emf.close();
