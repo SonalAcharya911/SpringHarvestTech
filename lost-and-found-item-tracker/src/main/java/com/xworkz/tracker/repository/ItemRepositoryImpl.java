@@ -93,6 +93,11 @@ public class ItemRepositoryImpl implements ItemRepository{
         return false;
     }
 
+    @Override
+    public boolean deleteItemByID(Integer id) {
+        return false;
+    }
+
     public static  void closeFactory(){
         if(emf!=null && emf.isOpen()){
             emf.close();
