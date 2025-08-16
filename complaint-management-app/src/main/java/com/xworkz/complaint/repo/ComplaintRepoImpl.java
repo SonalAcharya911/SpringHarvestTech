@@ -84,6 +84,11 @@ public class ComplaintRepoImpl implements ComplaintRepo{
         return false;
     }
 
+    @Override
+    public boolean deleteComplaintByID(Integer id) {
+        return false;
+    }
+
     public static  void closeFactory(){
         if(emf!=null && emf.isOpen()){
             emf.close();

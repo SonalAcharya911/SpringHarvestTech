@@ -13,4 +13,6 @@ public interface ItemRepository {
     ItemEntity findByID(Integer id);
 
     boolean updateItem(ItemEntity entity);
+
+    boolean deleteItemByID(Integer id);
 }
