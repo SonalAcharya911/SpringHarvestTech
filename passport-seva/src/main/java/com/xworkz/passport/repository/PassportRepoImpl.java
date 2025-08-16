@@ -138,6 +138,11 @@ public class PassportRepoImpl implements PassportRepo {
         return false;
     }
 
+    @Override
+    public boolean deletePassportByID(Integer id) {
+        return false;
+    }
+
 
     public static void closeFactory(){
         if(emf.isOpen() && emf!=null){
