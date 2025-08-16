@@ -13,4 +13,6 @@ public interface ArtRepository {
     ArtEntity findByID(Integer id);
 
     boolean updateArtworkDetails(ArtEntity entity);
+
+    boolean deleteArtworktByID(Integer id);
 }
