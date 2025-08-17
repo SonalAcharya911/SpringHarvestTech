@@ -19,6 +19,21 @@ import javax.persistence.*;
 @NamedQuery(name = "checkContactExist",query = "select u from UserEntity u where u.contact=: contact")
 
 @NamedQuery(name = "getAll",query = "select u from UserEntity u")
+
+@NamedQuery(name = "updatePassport", query = "update UserEntity u set u.passportOffice=: passportOffice," +
+        "u.givenName=: givenName," +
+        "u.surname=: surname," +
+        "u.dob=: dob," +
+        "u.email=: email," +
+        "u.contact=: contact," +
+        "u.loginID=: loginID," +
+        "u.password=: password," +
+        "u.confirmPassword=: confirmPassword," +
+        "u.hintQuestion=: hintQuestion," +
+        "u.hintAnswer=: hintAnswer" +
+        " where u.userID=: id")
+
+@NamedQuery(name = "deletePassport",query = "delete from UserEntity u where u.userID=: userID")
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -46,7 +47,37 @@ public class PassportController {
         List<UserDTO> dtoList=service.getAll();
         System.out.println("Get All in Controller: ");
         dtoList.forEach(System.out::println);
-        model.addAttribute(dtoList);
+        model.addAttribute("DTOList",dtoList);
+        return "PassportList";
+    }
+
+    @GetMapping("getByID")
+    public String getByID(Integer id, Model model){
+        System.out.println("running getByID in Controller");
+        UserDTO dto=service.findByID(id);
+        System.out.println("dto in Controller: "+dto);
+        model.addAttribute("dto",dto);
+        return "PassportList";
+    }
+
+    @GetMapping("edit")
+    public String redirectToEditPage(@RequestParam("id") String id, Model model){
+        System.out.println("running redirectToEditPage, id= "+id);
+        UserDTO dto=service.findByID(Integer.valueOf(id));
+        System.out.println("dto in redirect to edit: "+dto);
+        model.addAttribute("dto",dto);
+        return "UpdatePassport";
+    }
+
+    @PostMapping("updatePassport")
+    public String updatePassportDetails(UserDTO dto,Model model){
+        System.out.println("running updatePassportDetails in Controller..., DTO: "+dto);
+        String message=service.updatePassport(dto);
+        model.addAttribute("message",message);
+        List<UserDTO> dtoList=service.getAll();
+        System.out.println("Get All in Controller: ");
+        dtoList.forEach(System.out::println);
+        model.addAttribute("DTOList",dtoList);
         return "PassportList";
     }
 }
