@@ -15,6 +15,8 @@ public interface PassportRepo {
 
     boolean checkContactExist(Long contact);
 
+    UserEntity findByID(Integer id);
+
     boolean updatePassport(UserEntity entity);
 
     boolean deletePassportByID(Integer id);
