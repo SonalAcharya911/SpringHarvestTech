@@ -14,4 +14,8 @@ public interface PassportService {
     boolean checkloginIdExist(String loginID);
 
     boolean checkContactExist(Long contact);
+
+    UserDTO findByID(Integer id);
+
+    String updatePassport(UserDTO dto);
 }
