@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public class PassportRepoImpl implements PassportRepo {
 
-    private static  final EntityManagerFactory emf= Persistence.createEntityManagerFactory("x-workz");
+    private static final EntityManagerFactory emf= Persistence.createEntityManagerFactory("x-workz");
     @Override
     public boolean save(UserEntity entity) {
         System.out.println("running save in Repo");
@@ -54,7 +54,6 @@ public class PassportRepoImpl implements PassportRepo {
             list=em.createNamedQuery("getAll").getResultList();
             System.out.println("Passport List in Repo: ");
             list.forEach(System.out::println);
-
         }
         catch(PersistenceException e){
             System.out.println(e.getMessage());
@@ -134,14 +133,84 @@ public class PassportRepoImpl implements PassportRepo {
     }
 
     @Override
+    public UserEntity findByID(Integer id) {
+        System.out.println("running findByID in Repository");
+        EntityManager em=null;
+        UserEntity entity=null;
+        try{
+            em=emf.createEntityManager();
+            entity = em.find(UserEntity.class,id);
+            System.out.println("User entity in Repo:"+entity);
+        } catch (PersistenceException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            if(em!=null){
+                em.close();
+            }
+        }
+
+        return entity;
+    }
+
+    @Override
     public boolean updatePassport(UserEntity entity) {
         System.out.println("running updatePassword in Repo");
+        EntityManager em=null;
+        try{
+            em=emf.createEntityManager();
+            em.getTransaction().begin();
+            int rows=em.createNamedQuery("updatePassport").setParameter("passportOffice",entity.getPassportOffice())
+                    .setParameter("givenName",entity.getGivenName())
+                    .setParameter("surname",entity.getSurname())
+                    .setParameter("dob",entity.getDob())
+                    .setParameter("email",entity.getEmail())
+                    .setParameter("contact",entity.getContact())
+                    .setParameter("loginID",entity.getLoginID())
+                    .setParameter("password",entity.getPassword())
+                    .setParameter("confirmPassword",entity.getConfirmPassword())
+                    .setParameter("hintQuestion",entity.getHintQuestion())
+                    .setParameter("hintAnswer",entity.getHintAnswer())
+                    .setParameter("id",entity.getUserID())
+                    .executeUpdate();
+            em.getTransaction().commit();
+
+            if(rows>0){
+                return true;
+            }
+        }catch(PersistenceException e){
+            System.out.println(e.getMessage());
+        }
+        finally{
+            if(em!=null){
+                em.close();
+            }
+        }
         return false;
     }
 
     @Override
     public boolean deletePassportByID(Integer id) {
         System.out.println("running deletePassportByID in Repo");
+        EntityManager em=null;
+        try{
+            em=emf.createEntityManager();
+            UserEntity entity=em.find(UserEntity.class,id);
+            em.getTransaction().begin();
+            if(entity!=null){
+                int rows=em.createNamedQuery("deletePassport").setParameter("userID",entity.getUserID()).executeUpdate();
+                if(rows>0){
+                    em.getTransaction().commit();
+                    return true;
+                }
+            }
+        }
+        catch (PersistenceException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            if(em!=null){
+                em.close();
+            }
+        }
         return false;
     }
 
