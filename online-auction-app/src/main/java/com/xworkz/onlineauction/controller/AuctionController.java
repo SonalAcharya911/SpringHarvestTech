@@ -8,9 +8,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 
 @Controller
+@RequestMapping("/")
 public class AuctionController {
+
     @Autowired
     private AuctionService service;
 
@@ -32,7 +36,7 @@ public class AuctionController {
 
     @PostMapping("save")
     public String saveIntoDatabase(MemberDTO dto, Model model){
-        System.out.println("running saveIntoDatabase in Controller");
+        System.out.println("running saveIntoDatabase in Controller, dto: "+dto);
         if(dto!=null){
             boolean isSaved=service.validateAndSave(dto);
             if(isSaved){
@@ -43,6 +47,12 @@ public class AuctionController {
             }
         }
 
-        return "DataSavedSuccess";
+        return "MemberRegistrationForm";
+    }
+
+    @GetMapping("redirectToLogin")
+    public String redirectToLogin(){
+        System.out.println("running redirectToLogin in controller");
+        return "LoginForm";
     }
 }
