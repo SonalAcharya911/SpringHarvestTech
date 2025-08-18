@@ -15,6 +15,16 @@ import javax.persistence.*;
 @Table(name = "artwork_details")
 
 @NamedQuery(name="getAllArtworks",query = "select a from ArtEntity a")
+
+@NamedQuery(name = "updateArtwork",query = "update ArtEntity a set a.artistName=: artistName, " +
+        "a.artworkTitle=: artworkTitle, " +
+        "a.lengthInCm=: lengthInCm, " +
+        "a.widthInCm=: widthInCm, " +
+        "a.price=: price, " +
+        "a.artistEmail=:artistEmail, " +
+        "a.artistContact=: artistContact where a.artID=: artID")
+@NamedQuery(name = "deleteArtwork",query = "delete from ArtEntity a where a.artID=: artID")
+
 public class ArtEntity {
 
     @Id

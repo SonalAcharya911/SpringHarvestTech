@@ -8,5 +8,10 @@ public interface ArtService {
     boolean save(ArtDTO dto);
 
     List<ArtDTO> getAllArtworks();
+
     ArtDTO findByID(Integer id);
+
+    String updateArtwork(ArtDTO dto);
+
+    String deleteArtwork(Integer id);
 }

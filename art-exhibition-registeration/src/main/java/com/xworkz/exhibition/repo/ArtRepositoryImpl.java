@@ -82,12 +82,57 @@ public class ArtRepositoryImpl implements ArtRepository{
     @Override
     public boolean updateArtworkDetails(ArtEntity entity) {
         System.out.println("running updateArtworkDetails in Repository");
+        EntityManager em=null;
+        try{
+            em=emf.createEntityManager();
+            em.getTransaction().begin();
+            int rows=em.createNamedQuery("updateArtwork").setParameter("artistName",entity.getArtistName())
+                    .setParameter("artworkTitle",entity.getArtworkTitle())
+                    .setParameter("lengthInCm",entity.getLengthInCm())
+                    .setParameter("widthInCm",entity.getWidthInCm())
+                    .setParameter("price",entity.getPrice())
+                    .setParameter("artistEmail",entity.getArtistEmail())
+                    .setParameter("artistContact",entity.getArtistContact())
+                    .setParameter("artID",entity.getArtID())
+                    .executeUpdate();
+            if(rows>0){
+                em.getTransaction().commit();
+                return true;
+            }
+        }catch (PersistenceException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            if(em!=null){
+                em.close();
+            }
+        }
         return false;
     }
 
     @Override
     public boolean deleteArtworktByID(Integer id) {
         System.out.println("running deleteArtworktByID in Repository");
+        EntityManager em=null;
+        try{
+            em=emf.createEntityManager();
+            ArtEntity entity=em.find(ArtEntity.class,id);
+            em.getTransaction().begin();
+            if(entity!=null){
+                int rows=em.createNamedQuery("deleteArtwork").setParameter("artID",entity.getArtID()).executeUpdate();
+                System.out.println("rows affected: "+rows);
+                if(rows>0){
+                    em.getTransaction().commit();
+                    return true;
+                }
+            }
+        }
+        catch (PersistenceException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            if(em!=null){
+                em.close();
+            }
+        }
         return false;
     }
 
