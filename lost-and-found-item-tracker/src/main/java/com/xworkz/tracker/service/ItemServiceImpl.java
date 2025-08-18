@@ -3,6 +3,7 @@ package com.xworkz.tracker.service;
 import com.xworkz.tracker.dto.ItemDTO;
 import com.xworkz.tracker.entity.ItemEntity;
 import com.xworkz.tracker.repository.ItemRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -77,5 +78,28 @@ public class ItemServiceImpl implements ItemService{
         dto.setItemID(entity.getItemID());
 
         return dto;
+    }
+
+    @Override
+    public String updateItem(ItemDTO dto) {
+        System.out.println("running updateItem in Service, dto: "+dto);
+        ItemEntity entity=new ItemEntity();
+        BeanUtils.copyProperties(dto,entity);
+        boolean saved=repository.updateItem(entity);
+        if(saved){
+            return "saved updated data";
+        }
+        return "couldn't update data";
+    }
+
+    @Override
+    public String deleteItem(Integer id) {
+        System.out.println("running deleteItem in Service");
+        boolean isDeleted=repository.deleteItemByID(id);
+        System.out.println("isDeleted: "+isDeleted);
+        if(isDeleted){
+            return "deleted data successfully";
+        }
+        return "couldn't delete data";
     }
 }

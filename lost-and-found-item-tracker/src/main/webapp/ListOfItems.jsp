@@ -26,6 +26,7 @@
 
 <h2>Lost and Found Item Data</h2>
 
+${message}
 <table>
     <tr>
         <th>Item Id</th>
@@ -37,6 +38,7 @@
         <th>Lost or Found Date</th>
         <th>Email</th>
         <th>Contact</th>
+        <th>Action</th>
 
     </tr>
     <c:forEach var="item" items="${dtoList}">
@@ -50,7 +52,7 @@
             <td>${item.lostOrFoundDate}</td>
             <td>${item.email}</td>
             <td>${item.contact}</td>
-            <td><a href="findByID?id=${item.itemID}">view</a></td>
+            <td><a href="findByID?id=${item.itemID}">view</a> / <a href="redirectToUpdate?id=${item.itemID}">Edit</a> / <a href="deleteItem?id=${item.itemID}">Delete</a> </td>
         </tr>
     </c:forEach>
     <tr>

@@ -10,4 +10,8 @@ public interface ItemService {
     List<ItemDTO> getAllItems();
 
     ItemDTO findByID(Integer id);
+
+    String updateItem(ItemDTO dto);
+
+    String deleteItem(Integer id);
 }

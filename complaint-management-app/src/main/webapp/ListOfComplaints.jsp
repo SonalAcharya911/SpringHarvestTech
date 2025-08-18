@@ -25,7 +25,7 @@
 <body>
 
 <h2>Complaints Data</h2>
-
+${message}
 <table>
     <tr>
         <th>Complaint ID</th>
@@ -47,7 +47,7 @@
             <td>${item.category}</td>
             <td>${item.description}</td>
             <td>${item.location}</td>
-            <td><a href="findByID?id=${item.complaintID}">view</a></td>
+            <td><a href="findByID?id=${item.complaintID}">view</a> / <a href="edit?id=${item.complaintID}">edit</a> / <a href="delete?id=${item.complaintID}">delete</a> </td>
 
         </tr>
     </c:forEach>
@@ -59,6 +59,7 @@
         <td>${dto.category}</td>
         <td>${dto.description}</td>
         <td>${dto.location}</td>
+        <td><a href="getAllComplaints">View All</a> </td>
 
 
     </tr>
