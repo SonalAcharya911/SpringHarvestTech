@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -64,4 +65,30 @@ public class ComplaintController {
         return "ListOfComplaints";
     }
 
+    @GetMapping("edit")
+    public String redirectToEdit(@RequestParam("id") String id,Model model){
+        System.out.println("running redirectTo Edit in Controller...");
+        ComplaintDTO dto=service.findByID(Integer.valueOf(id));
+        model.addAttribute("dto",dto);
+        return "UpdateComplaint";
+    }
+
+    @PostMapping("updateComplaint")
+    public String updateComplaint(ComplaintDTO dto, Model model){
+        System.out.println("running updateComplaint in Controller, dto: "+dto);
+        String message=service.updateComplaint(dto);
+        model.addAttribute("message",message);
+        List<ComplaintDTO> dtoList=service.getAllComplaints();
+        model.addAttribute("dtoList",dtoList);
+        return "ListOfComplaints";
+    }
+
+    @GetMapping("delete")
+    public String deleteComplaint(@RequestParam("id") Integer id, Model model){
+        String message= service.deleteComplaint(id);
+        model.addAttribute("message",message);
+        List<ComplaintDTO> dtoList=service.getAllComplaints();
+        model.addAttribute("dtoList",dtoList);
+        return "ListOfComplaints";
+    }
 }
