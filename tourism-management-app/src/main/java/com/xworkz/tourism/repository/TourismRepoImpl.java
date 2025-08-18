@@ -133,9 +133,7 @@ public class TourismRepoImpl implements TourismRepo{
                 System.out.println("data deleted in repo");
                 em.getTransaction().commit();
                 return true;
-
             }
-
         }
         catch(PersistenceException e ){
             System.out.println(e.getMessage());

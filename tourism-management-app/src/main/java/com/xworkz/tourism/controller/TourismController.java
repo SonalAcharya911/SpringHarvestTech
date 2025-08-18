@@ -112,24 +112,11 @@ public class TourismController {
         model.addAttribute("tourismDTOList",tourismDTOList);
         return "AllEntity";
     }
-
-    @GetMapping("fetcAll")
-    public String fetcAll(Integer id, Model model){
-        List<TourismDTO> tourismDTOList=service.fetchAll();
-        System.out.println("Controller: "+tourismDTOList);
-        model.addAttribute("tourismDTOList",tourismDTOList);
-        String message=service.deleteById(id);
-        model.addAttribute("message", message);
-        return "AllEntity";
-    }
-
-
     @GetMapping("delete/{id}")
     public String deleteById(@PathVariable("id") Integer id,Model model){
         System.out.println("running deleteById in Controller..., id: "+id);
-
-//        List<TourismDTO> tourismDTOList=service.fetchAll();
-//        model.addAttribute("tourismDTOList",tourismDTOList);
+        String message=service.deleteById(id);
+        model.addAttribute("message", message);
         return "redirect:/fetcAll";
     }
 }

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="86c8890e-5690-4259-a821-47ad12e61487" name="Changes" comment="spring-jpa">
+      <change afterPath="$PROJECT_DIR$/../art-exhibition-registeration/src/main/webapp/UpdateArtworkDetails.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../complaint-management-app/src/main/webapp/UpdateComplaint.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lost-and-found-item-tracker/src/main/webapp/UpdateItemInfo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../online-auction-app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../online-auction-app/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../online-auction-app/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../online-auction-app/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../online-auction-app/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../online-auction-app/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../online-auction-app/src/main/java/com/xworkz/onlineauction/config/AuctionConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../online-auction-app/src/main/java/com/xworkz/onlineauction/config/AuctionInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../online-auction-app/src/main/java/com/xworkz/onlineauction/controller/AuctionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../online-auction-app/src/main/java/com/xworkz/onlineauction/dto/MemberDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../online-auction-app/src/main/java/com/xworkz/onlineauction/entity/MemberEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../online-auction-app/src/main/java/com/xworkz/onlineauction/repository/AuctionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../online-auction-app/src/main/java/com/xworkz/onlineauction/repository/AuctionRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../online-auction-app/src/main/java/com/xworkz/onlineauction/service/AuctionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../online-auction-app/src/main/java/com/xworkz/onlineauction/service/AuctionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../online-auction-app/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../online-auction-app/src/main/webapp/MemberRegistrationForm.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../online-auction-app/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../online-auction-app/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../passport-registration-app/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/UpdatePassport.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../art-exhibition-registeration/src/main/java/com/xworkz/exhibition/controller/ExhibitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../art-exhibition-registeration/src/main/java/com/xworkz/exhibition/controller/ExhibitionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../art-exhibition-registeration/src/main/java/com/xworkz/exhibition/entity/ArtEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../art-exhibition-registeration/src/main/java/com/xworkz/exhibition/entity/ArtEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../art-exhibition-registeration/src/main/java/com/xworkz/exhibition/repo/ArtRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../art-exhibition-registeration/src/main/java/com/xworkz/exhibition/repo/ArtRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../art-exhibition-registeration/src/main/java/com/xworkz/exhibition/service/ArtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../art-exhibition-registeration/src/main/java/com/xworkz/exhibition/service/ArtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../art-exhibition-registeration/src/main/java/com/xworkz/exhibition/service/ArtServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../art-exhibition-registeration/src/main/java/com/xworkz/exhibition/service/ArtServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../art-exhibition-registeration/src/main/webapp/ArtworkList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../art-exhibition-registeration/src/main/webapp/ArtworkList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../art-exhibition-registeration/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../art-exhibition-registeration/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../complaint-management-app/src/main/java/com/xworkz/complaint/controller/ComplaintController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../complaint-management-app/src/main/java/com/xworkz/complaint/controller/ComplaintController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../complaint-management-app/src/main/java/com/xworkz/complaint/entity/ComplaintEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../complaint-management-app/src/main/java/com/xworkz/complaint/entity/ComplaintEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../complaint-management-app/src/main/java/com/xworkz/complaint/repo/ComplaintRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../complaint-management-app/src/main/java/com/xworkz/complaint/repo/ComplaintRepoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../complaint-management-app/src/main/java/com/xworkz/complaint/service/ComplaintService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../complaint-management-app/src/main/java/com/xworkz/complaint/service/ComplaintService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../complaint-management-app/src/main/java/com/xworkz/complaint/service/ComplaintServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../complaint-management-app/src/main/java/com/xworkz/complaint/service/ComplaintServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../complaint-management-app/src/main/webapp/ListOfComplaints.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../complaint-management-app/src/main/webapp/ListOfComplaints.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../complaint-management-app/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../complaint-management-app/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lost-and-found-item-tracker/src/main/java/com/xworkz/tracker/controller/TrackerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lost-and-found-item-tracker/src/main/java/com/xworkz/tracker/controller/TrackerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lost-and-found-item-tracker/src/main/java/com/xworkz/tracker/entity/ItemEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lost-and-found-item-tracker/src/main/java/com/xworkz/tracker/entity/ItemEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lost-and-found-item-tracker/src/main/java/com/xworkz/tracker/repository/ItemRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lost-and-found-item-tracker/src/main/java/com/xworkz/tracker/repository/ItemRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lost-and-found-item-tracker/src/main/java/com/xworkz/tracker/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lost-and-found-item-tracker/src/main/java/com/xworkz/tracker/service/ItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lost-and-found-item-tracker/src/main/java/com/xworkz/tracker/service/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lost-and-found-item-tracker/src/main/java/com/xworkz/tracker/service/ItemServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lost-and-found-item-tracker/src/main/webapp/ListOfItems.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../lost-and-found-item-tracker/src/main/webapp/ListOfItems.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lost-and-found-item-tracker/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../lost-and-found-item-tracker/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/passport/controller/PassportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/passport/controller/PassportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/passport/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/passport/entity/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/passport/repository/PassportRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/passport/repository/PassportRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/passport/repository/PassportRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/passport/repository/PassportRepoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/passport/service/PassportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/passport/service/PassportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/passport/service/PassportServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/passport/service/PassportServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/PassportList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/PassportList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../student-exam-application" beforeDir="false" afterPath="$PROJECT_DIR$/../student-exam-application" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tourism-management-app/src/main/java/com/xworkz/tourism/controller/TourismController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tourism-management-app/src/main/java/com/xworkz/tourism/controller/TourismController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tourism-management-app/src/main/java/com/xworkz/tourism/repository/TourismRepoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tourism-management-app/src/main/java/com/xworkz/tourism/repository/TourismRepoImpl.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="31DdXl9kXT8bnZ0tGMRZS4zAUxe" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Smart Tomcat.Tomcat: passport-seva.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="Tomcat: passport-seva" type="com.poratu.idea.plugins.tomcat" temporary="true">
+      <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
+      <predefined_log_file enabled="true" id="Tomcat Access Log" />
+      <predefined_log_file id="Tomcat Catalina Log" />
+      <predefined_log_file id="Tomcat Manager Log" />
+      <predefined_log_file id="Tomcat Host Manager Log" />
+      <option name="adminPort" value="8010" />
+      <option name="catalinaBase" value="C:\Users\sonal\.SmartTomcat\passport-seva\passport-seva" />
+      <option name="contextPath" value="/passport-seva" />
+      <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+      <option name="extraClassPath" value="" />
+      <option name="port" value="8085" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat/9.0.38" />
+          <option name="path" value="$PROJECT_DIR$/../../../../apache-tomcat/apache-tomcat-9.0.38" />
+          <option name="version" value="9.0.38.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" value="" />
+      <module name="passport-seva" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Smart Tomcat.Tomcat: passport-seva" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="86c8890e-5690-4259-a821-47ad12e61487" name="Changes" comment="" />
+      <created>1755062627155</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1755062627155</updated>
+    </task>
+    <task id="LOCAL-00001" summary="spring-jpa">
+      <option name="closed" value="true" />
+      <created>1755104176380</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1755104176380</updated>
+    </task>
+    <task id="LOCAL-00002" summary="spring-jpa">
+      <option name="closed" value="true" />
+      <created>1755104186753</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1755104186753</updated>
+    </task>
+    <task id="LOCAL-00003" summary="spring-jpa">
+      <option name="closed" value="true" />
+      <created>1755104202928</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1755104202928</updated>
+    </task>
+    <task id="LOCAL-00004" summary="spring-jpa">
+      <option name="closed" value="true" />
+      <created>1755104215582</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1755104215582</updated>
+    </task>
+    <task id="LOCAL-00005" summary="spring-jpa">
+      <option name="closed" value="true" />
+      <created>1755104226541</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1755104226541</updated>
+    </task>
+    <task id="LOCAL-00006" summary="spring-jpa">
+      <option name="closed" value="true" />
+      <created>1755104335503</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1755104335503</updated>
+    </task>
+    <task id="LOCAL-00007" summary="spring-jpa">
+      <option name="closed" value="true" />
+      <created>1755104515120</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1755104515120</updated>
+    </task>
+    <task id="LOCAL-00008" summary="spring-jpa">
+      <option name="closed" value="true" />
+      <created>1755104659367</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1755104659367</updated>
+    </task>
+    <task id="LOCAL-00009" summary="spring-jpa">
+      <option name="closed" value="true" />
+      <created>1755282245663</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1755282245663</updated>
+    </task>
+    <task id="LOCAL-00010" summary="spring-jpa">
+      <option name="closed" value="true" />
+      <created>1755282257843</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1755282257843</updated>
+    </task>
+    <task id="LOCAL-00011" summary="spring-jpa">
+      <option name="closed" value="true" />
+      <created>1755282267075</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1755282267075</updated>
+    </task>
+    <task id="LOCAL-00012" summary="spring-jpa">
+      <option name="closed" value="true" />
+      <created>1755282276136</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1755282276136</updated>
+    </task>
+    <task id="LOCAL-00013" summary="spring-jpa">
+      <option name="closed" value="true" />
+      <created>1755282284830</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1755282284830</updated>
+    </task>
+    <task id="LOCAL-00014" summary="spring-jpa">
+      <option name="closed" value="true" />
+      <created>1755282296270</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1755282296270</updated>
+    </task>
+    <task id="LOCAL-00015" summary="spring-jpa">
+      <option name="closed" value="true" />
+      <created>1755282322578</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1755282322578</updated>
+    </task>
+    <task id="LOCAL-00016" summary="spring-jpa">
+      <option name="closed" value="true" />
+      <created>1755282330829</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1755282330831</updated>
+    </task>
+    <task id="LOCAL-00017" summary="spring-jpa">
+      <option name="closed" value="true" />
+      <created>1755367725274</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1755367725274</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="spring-jpa" />
+    <option name="LAST_COMMIT_MESSAGE" value="spring-jpa" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/xworkz/passport/dto/UserDTO.java</url>
+          <line>13</line>
+          <properties field="surname" class="com.xworkz.passport.dto.UserDTO" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
