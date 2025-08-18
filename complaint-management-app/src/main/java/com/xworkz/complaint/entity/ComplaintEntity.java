@@ -15,6 +15,16 @@ import javax.persistence.*;
 @Table(name = "complaint_details")
 
 @NamedQuery(name="getAllComplaints",query="select c from ComplaintEntity c")
+
+@NamedQuery(name = "updateComplaint",query = "update ComplaintEntity c set c.complainantName=: complainantName, " +
+        "c.email=: email, " +
+        "c.contact=: contact, " +
+        "c.category=: category, " +
+        "c.description=: description, " +
+        "c.location=: location " +
+        "where c.complaintID=: complaintID")
+
+@NamedQuery(name = "deleteComplaint",query = "delete from ComplaintEntity c where c.complaintID=: complaintID")
 public class ComplaintEntity {
 
     @Id

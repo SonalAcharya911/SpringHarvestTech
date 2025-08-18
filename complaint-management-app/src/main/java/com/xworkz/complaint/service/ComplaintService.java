@@ -11,4 +11,8 @@ public interface ComplaintService {
     List<ComplaintDTO> getAllComplaints();
 
     ComplaintDTO findByID(Integer id);
+
+    String updateComplaint(ComplaintDTO dto);
+
+    String deleteComplaint(Integer id);
 }

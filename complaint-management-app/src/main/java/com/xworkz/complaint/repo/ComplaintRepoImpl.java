@@ -82,12 +82,56 @@ public class ComplaintRepoImpl implements ComplaintRepo{
     @Override
     public boolean updateComplaintDetails(ComplaintEntity entity) {
         System.out.println("running updateComplaintDetails in Repository");
+        EntityManager em=null;
+        try{
+            em=emf.createEntityManager();
+            em.getTransaction().begin();
+            int rows=em.createNamedQuery("updateComplaint")
+                    .setParameter("complainantName",entity.getComplainantName())
+                    .setParameter("email",entity.getEmail())
+                    .setParameter("contact",entity.getContact())
+                    .setParameter("category",entity.getCategory())
+                    .setParameter("description",entity.getDescription())
+                    .setParameter("location",entity.getLocation())
+                    .setParameter("complaintID",entity.getComplaintID())
+                    .executeUpdate();
+            if(rows>0){
+                em.getTransaction().commit();
+                return true;
+            }
+        } catch (PersistenceException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            if(em!=null){
+                em.close();
+            }
+        }
         return false;
     }
 
     @Override
     public boolean deleteComplaintByID(Integer id) {
         System.out.println("running deleteComplaintByID in Repository");
+        EntityManager em=null;
+        try{
+            em=emf.createEntityManager();
+            ComplaintEntity entity=em.find(ComplaintEntity.class,id);
+            em.getTransaction().begin();
+            if(entity!=null){
+                int rows=em.createNamedQuery("deleteComplaint").setParameter("complaintID",entity.getComplaintID()).executeUpdate();
+                if(rows>0){
+                    em.getTransaction().commit();
+                    return true;
+                }
+            }
+        }
+        catch (PersistenceException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            if(em!=null){
+                em.close();
+            }
+        }
         return false;
     }
 
