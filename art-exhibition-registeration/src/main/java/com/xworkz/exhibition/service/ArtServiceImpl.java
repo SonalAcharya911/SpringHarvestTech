@@ -3,6 +3,7 @@ package com.xworkz.exhibition.service;
 import com.xworkz.exhibition.dto.ArtDTO;
 import com.xworkz.exhibition.entity.ArtEntity;
 import com.xworkz.exhibition.repo.ArtRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -73,5 +74,28 @@ public class ArtServiceImpl implements ArtService{
         dto.setArtistContact(entity.getArtistContact());
 
         return dto;
+    }
+
+    @Override
+    public String updateArtwork(ArtDTO dto) {
+        System.out.println("running updateArtwork in Service");
+        ArtEntity entity=new ArtEntity();
+        BeanUtils.copyProperties(dto,entity);
+        boolean saved=repo.updateArtworkDetails(entity);
+        if(saved){
+            return "saved updated data";
+        }
+        return "couldn't save data";
+    }
+
+    @Override
+    public String deleteArtwork(Integer id) {
+        System.out.println("running deleteArtwork in Service");
+        boolean isDeleted=repo.deleteArtworktByID(id);
+        System.out.println("isDeleted: "+isDeleted);
+        if(isDeleted){
+            return "deleted data successfully";
+        }
+        return "couldn't delete data";
     }
 }

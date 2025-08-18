@@ -24,8 +24,8 @@
 </head>
 <body>
 
-<h2>Tourism Data</h2>
-
+<h2>Artwork Data</h2>
+${message}
 <table>
     <tr>
         <th>Art ID</th>
@@ -36,7 +36,7 @@
         <th>Price</th>
         <th>Artist Email</th>
         <th>Artist Contact</th>
-        <th>View</th>
+        <th>Action</th>
 
     </tr>
     <c:forEach var="item" items="${dtoList}">
@@ -49,7 +49,7 @@
             <td>${item.price}</td>
             <td>${item.artistEmail}</td>
             <td>${item.artistContact}</td>
-            <td><a href="findByID?id=${item.artID}">view</a></td>
+            <td><a href="findByID?id=${item.artID}">view</a> / <a href="edit?id=${item.artID}">update</a> / <a href="delete?id=${item.artID}">delete</a> </td>
         </tr>
     </c:forEach>
     <tr>
@@ -64,10 +64,9 @@
         <td><a href="getAllArtworks">view all</a></td>
     </tr>
 
-    <a href="backToIndex">Go Back</a>
 
 </table>
-
+<a href="backToIndex">Go Back</a>
 
 
 </body>
