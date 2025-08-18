@@ -14,6 +14,18 @@ import java.sql.Date;
 @Table(name = "item_details")
 
 @NamedQuery(name = "getAllItems",query = "select i from ItemEntity i")
+
+@NamedQuery(name = "updateItem",query = "update ItemEntity i set i.holderName=: holderName, " +
+        "i.itemName=: itemName, " +
+        "i.itemDescription=: itemDescription, " +
+        "i.lostOrFound=: lostOrFound, " +
+        "i.location=: location, " +
+        "i.lostOrFoundDate=: lostOrFoundDate, " +
+        "i.email=: email, " +
+        "contact=: contact where i.itemID=: itemID")
+
+@NamedQuery(name = "deleteItem",query = "delete from ItemEntity i where i.itemID=: itemID")
+
 public class ItemEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

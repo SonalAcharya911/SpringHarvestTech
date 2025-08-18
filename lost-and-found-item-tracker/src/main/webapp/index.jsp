@@ -1,4 +1,9 @@
 <html>
+<head>
+    <title>
+        Lost and found
+    </title>
+</head>
 <body>
 <h2>Find your lost items or help someone find</h2>
 <a href="redirectToLostAndFound">Redirect To LostAndFound</a><br><br>

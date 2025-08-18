@@ -91,12 +91,59 @@ public class ItemRepositoryImpl implements ItemRepository{
     @Override
     public boolean updateItem(ItemEntity entity) {
         System.out.println("running updateItem in Repository");
+        EntityManager em=null;
+        try{
+            em=emf.createEntityManager();
+            em.getTransaction().begin();
+            int rows=em.createNamedQuery("updateItem")
+                    .setParameter("holderName",entity.getHolderName())
+                    .setParameter("itemName",entity.getItemName())
+                    .setParameter("itemDescription",entity.getItemDescription())
+                    .setParameter("lostOrFound",entity.getLostOrFound())
+                    .setParameter("location",entity.getLocation())
+                    .setParameter("lostOrFoundDate",entity.getLostOrFoundDate())
+                    .setParameter("email",entity.getEmail())
+                    .setParameter("contact", entity.getContact())
+                    .setParameter("itemID",entity.getItemID())
+                    .executeUpdate();
+
+            if(rows>0){
+                return true;
+            }
+        }
+        catch (PersistenceException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            if(em!=null){
+                em.close();
+            }
+        }
+
         return false;
     }
 
     @Override
     public boolean deleteItemByID(Integer id) {
-        System.out.println("running deleteItemByID in Repository");
+        EntityManager em=null;
+        try{
+            em=emf.createEntityManager();
+            ItemEntity entity=em.find(ItemEntity.class,id);
+            em.getTransaction().begin();
+            if(entity!=null){
+                int rows=em.createNamedQuery("deleteItem").setParameter("itemID",entity.getItemID()).executeUpdate();
+                if(rows>0){
+                    em.getTransaction().commit();
+                    return true;
+                }
+            }
+        }
+        catch (PersistenceException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            if(em!=null){
+                em.close();
+            }
+        }
         return false;
     }
 
