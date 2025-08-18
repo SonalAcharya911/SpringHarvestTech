@@ -3,6 +3,7 @@ package com.xworkz.complaint.service;
 import com.xworkz.complaint.dto.ComplaintDTO;
 import com.xworkz.complaint.entity.ComplaintEntity;
 import com.xworkz.complaint.repo.ComplaintRepo;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
@@ -70,5 +71,27 @@ public class ComplaintServiceImpl implements ComplaintService{
         }
         System.out.println("id is null");
         return null;
+    }
+
+    @Override
+    public String updateComplaint(ComplaintDTO dto) {
+        System.out.println("running updateComplaint in Service");
+        ComplaintEntity entity=new ComplaintEntity();
+        BeanUtils.copyProperties(dto,entity);
+        boolean saved=repo.updateComplaintDetails(entity);
+        if(saved){
+            System.out.println("data saved");
+            return "updated data saved";
+        }
+        return "couldn't save data";
+    }
+
+    @Override
+    public String deleteComplaint(Integer id) {
+        boolean isDeleted=repo.deleteComplaintByID(id);
+        if(isDeleted){
+            return "deleted data successfully";
+        }
+        return "couldn't delete data";
     }
 }

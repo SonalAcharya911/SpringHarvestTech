@@ -1,5 +1,11 @@
 <html>
+<head>
+    <title>
+        Art Exhibition
+    </title>
+</head>
 <body>
+
 <h2>Welcome To Art-Exhibition 2025 !</h2>
 
 <a href="redirectToExhibitionRegistration">Register Your Art Here</a><br><br>
