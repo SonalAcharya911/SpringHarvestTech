@@ -96,11 +96,13 @@ public class PassportRepoImpl implements PassportRepo {
             em=emf.createEntityManager();
             Query query=em.createNamedQuery("checkLoginIdExist").setParameter("loginID",loginID);
             UserEntity entity= (UserEntity) query.getSingleResult();
+            System.out.println(entity);
             if(entity!=null){
                 return true;
             }
         }catch(PersistenceException e){
             System.out.println(e.getMessage());
+            return false;
         }
         finally {
             if(em!=null){
@@ -108,6 +110,7 @@ public class PassportRepoImpl implements PassportRepo {
             }
         }
         return false;
+
     }
 
     @Override
