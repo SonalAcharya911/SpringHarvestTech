@@ -4,4 +4,8 @@ import com.xworkz.onlineauction.dto.MemberDTO;
 
 public interface AuctionService {
     boolean validateAndSave(MemberDTO dto);
+
+    boolean checkEmailExist(String email);
+
+    boolean checkContactExist(Long contact);
 }

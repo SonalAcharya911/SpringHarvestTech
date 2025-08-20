@@ -15,13 +15,41 @@ public class AuctionServiceImpl implements AuctionService{
 
     @Override
     public boolean validateAndSave(MemberDTO dto) {
+        System.out.println("running validateAndSave in Service, DTO: "+dto);
         MemberEntity entity=null;
+        boolean isSaved=false;
         if(dto!=null){
             entity=new MemberEntity();
             BeanUtils.copyProperties(dto,entity);
+            isSaved=repo.save(entity);
+        }
+
+        return isSaved;
+
+
+    }
+
+    @Override
+    public boolean checkEmailExist(String email) {
+        System.out.println("running checkEmailExist in Service");
+        boolean exists= repo.checkEmailExist(email);
+
+        if(exists){
+            System.out.println("email exists");
             return true;
         }
-        boolean isSaved=repo.save(entity);
+        return false;
+    }
+
+    @Override
+    public boolean checkContactExist(Long contact) {
+        System.out.println("running checkContactExist in Service");
+        boolean exists= repo.checkContactExist(contact);
+
+        if(exists){
+            System.out.println("contact exists");
+            return true;
+        }
         return false;
     }
 }
