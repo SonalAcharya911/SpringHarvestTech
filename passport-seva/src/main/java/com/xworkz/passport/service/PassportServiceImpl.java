@@ -82,4 +82,28 @@ public class PassportServiceImpl implements PassportService{
         }
         return false;
     }
+
+    @Override
+    public UserDTO findByID(Integer id) {
+        System.out.println("running findByID in Service");
+        UserEntity entity=repo.findByID(id);
+        UserDTO dto=new UserDTO();
+        BeanUtils.copyProperties(entity,dto);
+
+        System.out.println("dto in findByID Service: "+dto);
+
+        return dto;
+    }
+
+    @Override
+    public String updatePassport(UserDTO dto) {
+        System.out.println("running updatePassport in Service: "+dto);
+        UserEntity entity=new UserEntity();
+        BeanUtils.copyProperties(dto,entity);
+        boolean saved=repo.updatePassport(entity);
+        if(saved){
+            return "data saved into database";
+        }
+        return "couldn't save data";
+    }
 }
