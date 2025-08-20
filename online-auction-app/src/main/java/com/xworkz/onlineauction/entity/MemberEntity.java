@@ -12,6 +12,8 @@ import javax.persistence.*;
 @Entity
 
 @Table(name = "auction_member_details")
+
+@NamedQuery(name = "checkEmailExist",query = "select m from MemberEntity m where m.email=: email")
 public class MemberEntity {
 
     @Id
