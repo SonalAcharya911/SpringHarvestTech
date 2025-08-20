@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -76,6 +77,37 @@ public class TrackerController {
             System.out.println("dto: "+dto);
             model.addAttribute("dto",dto);
         }
+        return "ListOfItems";
+    }
+
+    @GetMapping("redirectToUpdate")
+    public String redirectToUpdate(@RequestParam("id") String id, Model model){
+        System.out.println("running redirectToUpdate in Controller..., id="+id);
+        ItemDTO dto=service.findByID(Integer.valueOf(id));
+        System.out.println("dto: "+dto);
+        model.addAttribute("dto",dto);
+        return "UpdateItemInfo";
+    }
+
+    @PostMapping("update")
+    public String updateItem(ItemDTO dto, Model model){
+        System.out.println("running updateItem in Controller");
+        String message=service.updateItem(dto);
+        model.addAttribute("message",message);
+        List<ItemDTO> dtoList=service.getAllItems();
+        model.addAttribute("dtoList",dtoList);
+
+        return "ListOfItems";
+    }
+
+    @GetMapping("deleteItem")
+    public String deleteItem(@RequestParam("id") Integer id, Model model){
+        System.out.println("running deleteItem in Controller, id="+id);
+        String message=service.deleteItem(id);
+        model.addAttribute("message",message);
+        List<ItemDTO> dtoList=service.getAllItems();
+        model.addAttribute("dtoList",dtoList);
+
         return "ListOfItems";
     }
 }
