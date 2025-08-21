@@ -1,10 +1,12 @@
 package com.xworkz.onlineauction.service;
 
+import com.xworkz.onlineauction.config.EmailConfiguration;
 import com.xworkz.onlineauction.dto.MemberDTO;
 import com.xworkz.onlineauction.entity.MemberEntity;
 import com.xworkz.onlineauction.repository.AuctionRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -12,6 +14,9 @@ public class AuctionServiceImpl implements AuctionService{
 
     @Autowired
     private AuctionRepository repo;
+    @Autowired
+    EmailConfiguration configuration;
+
 
     @Override
     public boolean validateAndSave(MemberDTO dto) {
@@ -23,10 +28,7 @@ public class AuctionServiceImpl implements AuctionService{
             BeanUtils.copyProperties(dto,entity);
             isSaved=repo.save(entity);
         }
-
         return isSaved;
-
-
     }
 
     @Override
@@ -51,5 +53,30 @@ public class AuctionServiceImpl implements AuctionService{
             return true;
         }
         return false;
+    }
+
+    @Override
+    public void mailSend(String email, String otp) {
+        System.out.println("Invoking mailSend");
+        SimpleMailMessage simpleMailMessage= new SimpleMailMessage();
+        simpleMailMessage.setTo(email);
+        simpleMailMessage.setSubject("Otp to login");
+
+        simpleMailMessage.setText("Otp for login "+otp+"\n Name:"+email);
+        configuration.mailSender().send(simpleMailMessage);
+        System.out.println("Otp sent for :"+email+" : "+otp);
+    }
+
+    @Override
+    public boolean verifyOTP(String email, String otp) {
+        System.out.println("running verifyOTP in service...");
+        boolean isVerified=repo.verifyOTP(email,otp);
+        if(isVerified){
+            System.out.println("otp verified");
+        }
+        else{
+            System.out.println("otp does not match");
+        }
+        return isVerified;
     }
 }
