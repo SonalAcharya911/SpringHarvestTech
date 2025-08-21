@@ -14,7 +14,7 @@ public class AuctionInitializer extends AbstractAnnotationConfigDispatcherServle
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[]{AuctionConfiguration.class, WebConfig.class };
+        return new Class[]{AuctionConfiguration.class, WebConfig.class, EmailConfiguration.class};
     }
 
     @Override
