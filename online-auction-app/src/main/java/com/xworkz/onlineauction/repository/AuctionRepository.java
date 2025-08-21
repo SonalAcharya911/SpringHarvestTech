@@ -8,4 +8,6 @@ public interface AuctionRepository {
     boolean checkEmailExist(String email);
 
     boolean checkContactExist(Long contact);
+
+    boolean verifyOTP(String email,String otp);
 }
