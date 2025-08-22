@@ -23,7 +23,7 @@
         E-mail Id: <input type="email" name="email" onchange="loginemail()" id="email"><br><br>
 
         <span id="contacterror" style="color: red"></span><br>
-        Contact: <input type="tel" name="contact" id="contact" onchange="checkContact()"><br><br>
+        Contact: <input type="tel" name="contact" id="contact" onblur="checkContact()"><br><br>
 
         <span id="loginIDerror" style="color: red"></span><br>
         Login Id: <input type="email" name="loginID" id="loginID" onchange="checkLoginId()"><br><br>
@@ -50,7 +50,7 @@
         const email=document.getElementById('email').value;
         if(email!==""){
             var xhttp = new XMLHttpRequest();
-            xhttp.open("GET","http://localhost:8080/passport-seva/loginemail?email="+email);
+            xhttp.open("GET","http://localhost:8085/passport-seva/loginemail?email="+email);
             xhttp.send();
 
             xhttp.onload = function(){
@@ -63,7 +63,7 @@
         const loginID=document.getElementById('loginID').value;
         if(loginID!==""){
             var xhttp = new XMLHttpRequest();
-            xhttp.open("GET","http://localhost:8080/passport-seva/loginIdexist?loginID="+loginID);
+            xhttp.open("GET","http://localhost:8085/passport-seva/loginIdexist?loginID="+loginID);
             xhttp.send();
 
             xhttp.onload = function(){
@@ -74,15 +74,13 @@
 
     function checkContact(){
         const contact=document.getElementById('contact').value;
-        if(contact!==0){
+       if(contact!=0){
             var xhttp = new XMLHttpRequest();
-            xhttp.open("GET","http://localhost:8080/passport-seva/contactExist?contact="+contact);
+            xhttp.open("GET","http://localhost:8085/passport-seva/contactExist?contact="+contact);
             xhttp.send();
 
-            xhttp.onLoad = function(){
-                console.log("checking contact error before");
+            xhttp.onload = function(){
                 document.getElementById("contacterror").innerHTML=this.responseText;
-                console.log("checking after");
             }
         }
 
