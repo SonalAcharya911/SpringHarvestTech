@@ -75,6 +75,7 @@
     <div class="text-center mt-3">
         <a href="redirectToLogin" class="btn btn-primary">Login</a>
     </div>
+    <a href="EmailVerification.jsp">Verify Email</a>
 
 </center>
 

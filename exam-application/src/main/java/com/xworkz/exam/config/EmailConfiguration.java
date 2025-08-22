@@ -8,6 +8,7 @@ import java.util.Properties;
 @Configuration
 public class EmailConfiguration {
 
+
     public JavaMailSenderImpl mailSender(){
         JavaMailSenderImpl javaMailSender=new JavaMailSenderImpl();
         javaMailSender.setHost("smtp.gmail.com");
