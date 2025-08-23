@@ -3,7 +3,6 @@ package com.xworkz.onlineauction.entity;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.boot.context.properties.bind.Name;
 
 import javax.persistence.*;
 
@@ -16,6 +15,7 @@ import javax.persistence.*;
 
 @NamedQuery(name = "checkEmailExist",query = "select m from MemberEntity m where m.email=: email")
 @NamedQuery(name = "verifyOTP", query = "select m.password from MemberEntity m where m.email=: email")
+@NamedQuery(name = "savePassword", query = "update MemberEntity m set m.password=: password")
 public class MemberEntity {
 
     @Id
