@@ -106,4 +106,9 @@ public class AuctionRepositoryImpl implements AuctionRepository {
         }
         return false;
     }
+
+    @Override
+    public boolean savePassword(String password) {
+        return false;
+    }
 }
