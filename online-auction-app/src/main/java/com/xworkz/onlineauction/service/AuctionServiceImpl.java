@@ -79,4 +79,9 @@ public class AuctionServiceImpl implements AuctionService{
         }
         return isVerified;
     }
+
+    @Override
+    public boolean savePassword(String password) {
+        return false;
+    }
 }
