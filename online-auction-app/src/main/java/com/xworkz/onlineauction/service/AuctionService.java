@@ -14,5 +14,7 @@ public interface AuctionService {
 
     boolean verifyOTP(String email,String otp);
 
+    boolean savePassword(String password);
+
 
 }
