@@ -14,7 +14,9 @@ public interface AuctionService {
 
     boolean verifyOTP(String email,String otp);
 
-    boolean savePassword(String password);
+    boolean savePassword(String email, String password);
+
+    MemberDTO loginToAccount(String email, String password);
 
 
 }

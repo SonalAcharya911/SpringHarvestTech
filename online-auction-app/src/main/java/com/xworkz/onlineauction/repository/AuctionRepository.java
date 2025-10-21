@@ -11,5 +11,7 @@ public interface AuctionRepository {
 
     boolean verifyOTP(String email,String otp);
 
-    boolean savePassword(String password);
+    boolean savePassword(String email, String password);
+
+    MemberEntity login(String email, String password);
 }

@@ -6,6 +6,7 @@ import com.xworkz.onlineauction.entity.MemberEntity;
 import com.xworkz.onlineauction.repository.AuctionRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ public class AuctionServiceImpl implements AuctionService{
 
     @Autowired
     private AuctionRepository repo;
+
     @Autowired
     EmailConfiguration configuration;
 
@@ -61,9 +63,9 @@ public class AuctionServiceImpl implements AuctionService{
         SimpleMailMessage simpleMailMessage= new SimpleMailMessage();
         simpleMailMessage.setTo(email);
         simpleMailMessage.setSubject("Otp to login");
-
-        simpleMailMessage.setText("Otp for login "+otp+"\n Name:"+email);
+        simpleMailMessage.setText("Otp for login "+otp);
         configuration.mailSender().send(simpleMailMessage);
+        repo.savePassword(email, otp);
         System.out.println("Otp sent for :"+email+" : "+otp);
     }
 
@@ -81,7 +83,28 @@ public class AuctionServiceImpl implements AuctionService{
     }
 
     @Override
-    public boolean savePassword(String password) {
+    public boolean savePassword(String email, String password) {
+
+        System.out.println("running savePassword in Service");
+        boolean isSaved=repo.savePassword(email, password);
+        if(isSaved){
+            System.out.println("password saved ");
+            return true;
+        }
+        else{
+            System.out.println("couldn't save password");
+        }
         return false;
+    }
+
+    @Override
+    public MemberDTO loginToAccount(String email, String password) {
+        System.out.println("running loginToAccount in Service");
+        MemberDTO dto=new MemberDTO();
+        if(email!=null){
+            MemberEntity entity= repo.login(email,password);
+            BeanUtils.copyProperties(entity,dto);
+        }
+        return dto;
     }
 }
